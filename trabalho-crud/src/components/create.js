@@ -22,17 +22,17 @@ export default function Create() {
         <div>
             <Form className="create-form">
                 <Form.Field>
-                    <label>First Name</label>
-                    <input placeholder='First Name' onChange={(e) => setFirstName(e.target.value)}/>
+                    <label>Nome</label>
+                    <input placeholder='Nome' onChange={(e) => setFirstName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
-                    <input placeholder='Last Name' onChange={(e) => setLastName(e.target.value)}/>
+                    <label>Sobrenome</label>
+                    <input placeholder='Sobrenome' onChange={(e) => setLastName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <Checkbox label='I agree to the Terms and Conditions' onChange={(e) => setCheckbox(!checkbox)}/>
+                    <Checkbox label='Eu aceito os termos' onChange={(e) => setCheckbox(!checkbox)}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit'>Submit</Button>
+                <Button onClick={postData} type='submit'>Enviar</Button>
             </Form>
         </div>
     )

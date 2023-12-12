@@ -16,9 +16,9 @@ export default function Read() {
     const setData = (data) => {
         let { id, firstName, lastName, checkbox } = data;
         localStorage.setItem('ID', id);
-        localStorage.setItem('First Name', firstName);
-        localStorage.setItem('Last Name', lastName);
-        localStorage.setItem('Checkbox Value', checkbox)
+        localStorage.setItem('Nome', firstName);
+        localStorage.setItem('Sobrenome', lastName);
+        localStorage.setItem('Checkbox Selecionado', checkbox)
     }
 
     const getData = () => {
@@ -40,11 +40,11 @@ export default function Read() {
             <Table singleLine>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>First Name</Table.HeaderCell>
-                        <Table.HeaderCell>Last Name</Table.HeaderCell>
-                        <Table.HeaderCell>Checkbox Value</Table.HeaderCell>
-                        <Table.HeaderCell>Update</Table.HeaderCell>
-                        <Table.HeaderCell>Delete</Table.HeaderCell>
+                        <Table.HeaderCell>Nome</Table.HeaderCell>
+                        <Table.HeaderCell>Sobrenome</Table.HeaderCell>
+                        <Table.HeaderCell>Selecionar</Table.HeaderCell>
+                        <Table.HeaderCell>Atualizar</Table.HeaderCell>
+                        <Table.HeaderCell>Deletar</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -54,14 +54,14 @@ export default function Read() {
                             <Table.Row>
                                 <Table.Cell>{data.firstName}</Table.Cell>
                                 <Table.Cell>{data.lastName}</Table.Cell>
-                                <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
+                                <Table.Cell>{data.checkbox ? 'Disponível' : 'Indisponível'}</Table.Cell>
                                 <Link to='/update'>
                                     <Table.Cell> 
-                                        <Button onClick={() => setData(data)}>Update</Button>
+                                        <Button onClick={() => setData(data)}>Atualizar</Button>
                                     </Table.Cell>
                                 </Link>
                                 <Table.Cell>
-                                    <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                                    <Button onClick={() => onDelete(data.id)}>Deletar</Button>
                                 </Table.Cell>
                             </Table.Row>
                         )

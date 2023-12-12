@@ -12,8 +12,8 @@ export default function Update() {
 
     useEffect(() => {
         setID(localStorage.getItem('ID'))
-        setFirstName(localStorage.getItem('First Name'));
-        setLastName(localStorage.getItem('Last Name'));
+        setFirstName(localStorage.getItem('Nome'));
+        setLastName(localStorage.getItem('Sobrenome'));
         setCheckbox(localStorage.getItem('Checkbox Value'));
     }, []);
 
@@ -30,15 +30,15 @@ export default function Update() {
         <div>
             <Form className="create-form">
                 <Form.Field>
-                    <label>First Name</label>
-                    <input placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
+                    <label>Nome</label>
+                    <input placeholder='Nome' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <label>Last Name</label>
-                    <input placeholder='Last Name' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+                    <label>Sobrenome</label>
+                    <input placeholder='Sobrenome' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
-                    <Checkbox label='I agree to the Terms and Conditions' checked={checkbox} onChange={() => setCheckbox(!checkbox)}/>
+                    <Checkbox label='Eu aceito os termos' checked={checkbox} onChange={() => setCheckbox(!checkbox)}/>
                 </Form.Field>
                 <Button type='submit' onClick={updateAPIData}>Update</Button>
             </Form>
